@@ -44,10 +44,10 @@ class Meta(object):
     
     
 class YolNotlariAdmin(admin.ModelAdmin):
-    ordering = ['NotBaslik','ilce']
-    list_display = ('NotBaslik','ilce','DurumGecerlilik')
-    list_filter = ('NotBaslik','DurumGecerlilik')
-    search_fields = ['NotBaslik']
+    ordering = ['NotBaslik','ilce', 'sehir']
+    list_display = ('NotBaslik','sehir','ilce','DurumGecerlilik')
+    list_filter = ('NotBaslik','DurumGecerlilik', 'sehir')
+    search_fields = ['NotBaslik', 'sehir']
     prepopulated_fields = {'slug':('NotBaslik',)}
 
 def yolnotlari(self):
@@ -62,7 +62,7 @@ class Meta(object):
 
 list_display = ('sehir','il_tck_web',sehirler)
 list_display = ('ilce_adi', 'sehir',ilceler)
-list_display = ('NotBaslik','ilce','DurumGecerlilik',yolnotlari)
+list_display = ('NotBaslik','ilce', 'sehir','DurumGecerlilik',yolnotlari)
 
 admin.site.register(YolNotlari, YolNotlariAdmin)
 admin.site.register(Sehirler, SehirlerAdmin)
