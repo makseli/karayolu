@@ -61,6 +61,7 @@ class YolNotlari(models.Model):
     Tavsiye  = models.TextField(verbose_name="Durum için Tavsiye")
     DurumGecerlilik = models.CharField(max_length=128, verbose_name="Yolun Şuanki Durumu")
     ilce = models.ForeignKey(Ilceler,verbose_name="İlçe Adi") 
+    sehir = models.ForeignKey(Sehirler,verbose_name="Şehir Adi") 
     slug = models.SlugField(max_length=128, verbose_name="Url")
 
 def unicode(self):
