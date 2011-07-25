@@ -75,6 +75,6 @@ class Meta:
     verbose_name = "Yol Notları"
     verbose_name_plural = "Yol Notları"
 class Admin:
-    list_display = ("ilce", "Tavsiye", "NotBaslik", "DurumAciklama")
+    list_display = ("ilce", "sehir", "Tavsiye", "NotBaslik", "DurumAciklama")
     search_fields = ["ilce", "NotBaslik"]
     list_filter = ("ilce", "NotBaslik")
