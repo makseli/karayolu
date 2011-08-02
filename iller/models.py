@@ -55,21 +55,25 @@ class Admin:
     
     
 class YolNotlari(models.Model):
-    NotBaslik = models.CharField(max_length=32, verbose_name="Yol Durum Başlığı")
+    NotBaslik = models.TextField(max_length=32, verbose_name="Yol Durum Başlığı")
 #    resim = models.FileBrowseField("Image", max_length=200, directory="medya/m_ilceler/", extensions=[".jpg"], blank=True, null=True)
     DurumAciklama  = models.TextField(verbose_name="Yol Durumu Açıklama")
     Tavsiye  = models.TextField(verbose_name="Durum için Tavsiye")
+    MapLokeysin = models.TextField(max_length=128, verbose_name="Yol Google Map Koordinatları")
     DurumGecerlilik = models.CharField(max_length=128, verbose_name="Yolun Şuanki Durumu")
+    Durum = models.BooleanField(verbose_name="Aktif-Pasif Durum")
+    sehir = models.ForeignKey(Sehirler,verbose_name="Şehir Adi")
     ilce = models.ForeignKey(Ilceler,verbose_name="İlçe Adi") 
-    sehir = models.ForeignKey(Sehirler,verbose_name="Şehir Adi") 
     slug = models.SlugField(max_length=128, verbose_name="Url")
 
-def unicode(self):
+def __unicode__(self): 
+    return self.ilce
     return self.NotBaslik
     return self.Tavsiye
+    return self.Durum
     return self.DurumGecerlilik
     return self.DurumAciklama
-    return self.ilce
+    return self.sehir
     
 class Meta:
     verbose_name = "Yol Notları"
