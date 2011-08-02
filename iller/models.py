@@ -13,7 +13,7 @@ class Sehirler(models.Model):
    il_tck_adres = models.CharField(max_length=256, verbose_name="Adres")
    slug = models.SlugField(max_length=128, verbose_name="Url")
    
-   def __unicode__(self):
+def __unicode__(self):
     return self.sehir
     return self.il_tck_kurum
     return self.il_tck_web
@@ -37,7 +37,7 @@ class Ilceler(models.Model):
     ilce_tanitim  = models.TextField(verbose_name="Tanitim")
     sehir = models.ForeignKey(Sehirler,verbose_name="Şehir Adi") # related_name="+", 
     slug = models.SlugField(max_length=128, verbose_name="Url")
-    def unicode(self):
+def __unicode__(self):
      return self.ilce_adi
 #    return u'%s' % (self.sehir)
  
