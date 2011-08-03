@@ -1,3 +1,4 @@
+#*-* coding: utf-8-*-
 # Django settings for tck project.
 
 DEBUG = True
@@ -12,7 +13,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/mustafa/xm_django/tck/tck.db',                # Or path to database file if using sqlite3.
+        'NAME': '/home/mustafa/xm_django/tck/tck.db',                #tck  Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -89,7 +90,6 @@ SECRET_KEY = 'gai8b!t(8*i#=@*z_jx6#f++=+or^&72f62^b48zie_qm!347a'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -106,6 +106,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    '/home/mustafa/xm_django/tck/template/',
 )
 
 INSTALLED_APPS = (
@@ -117,7 +118,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'tck.iller',
-#    'tck.YolNotu',
+    'tck.ilceler',
+    'tck.yolnotlar',
 )
 
 # A sample logging configuration. The only tangible logging
